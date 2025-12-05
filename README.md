@@ -1,17 +1,28 @@
-#  Library Escape Game
+#  Study You To Death
 
-A 2D arcade-style game built from scratch using SDL2 in C++. Navigate through a library environment, dodge obstacles, and complete objectives before time runs out!
+A 2D stealth arcade game built from scratch using SDL2 in C++. Sneak through a haunted library, avoid patrolling students, collect notes, and escape before time runs out!
 
 ![C++](https://img.shields.io/badge/C++-17-blue.svg)
 ![SDL2](https://img.shields.io/badge/SDL2-2.30.7-green.svg)
 ![CMake](https://img.shields.io/badge/CMake-Build-red.svg)
 
+##  Screenshots
+
+### Main Menu
+![Main Menu](imgs/screenshot_menu.png)
+
+### Gameplay
+![Gameplay](imgs/screenshot_gameplay.png)
+
 ##  Features
 
 - **Custom Game Engine** - Built from scratch with proper game loop architecture
+- **Stealth Mechanics** - Avoid enemy field of view (cone detection system)
 - **Multiple Game States** - Menu, Settings, and Gameplay screens with smooth transitions
+- **Enemy AI** - Patrolling students with directional vision cones
 - **Collision Detection** - Physics-based collision system for obstacles (tables, bookshelves)
 - **Character Controller** - Smooth 2D character movement with sprite animations
+- **Timer & Score System** - Race against the clock to maximize your score
 - **Audio System** - Background music and sound effects using SDL2_mixer
 - **UI System** - Custom rendered menus and HUD using SDL2_ttf
 
@@ -36,13 +47,12 @@ A 2D arcade-style game built from scratch using SDL2 in C++. Navigate through a 
     playground.cpp # Main gameplay logic
     menu.cpp       # Main menu implementation
     settings.cpp   # Settings page
-    enemy.cpp      # Enemy AI behavior
-    collectible.cpp# Collectible items logic
-    obstacle.cpp   # Obstacle collision handling
+    enemy.cpp      # Enemy AI with vision cone detection
+    collectible.cpp# Collectible notes logic
+    obstacle.cpp   # Tables & bookshelves collision
  include/           # Header files
  imgs/              # Game textures and sprites
  fonts/             # TTF font files
- audio/             # Sound effects and music
  SDL_lib/           # SDL2 library files
 ```
 
@@ -70,15 +80,20 @@ make
 | D/ | Move Right |
 | ESC | Pause/Menu |
 
-##  Screenshots
+##  Gameplay
 
-*Screenshots coming soon*
+- **Objective**: Collect all the notes scattered around the library
+- **Avoid**: Patrolling students with flashlight vision cones
+- **Timer**: Complete the level before time runs out
+- **Score**: Collect notes to increase your score
 
 ##  What I Learned
 
 - Game loop architecture with delta time for frame-rate independent movement
 - 2D rendering pipeline and texture management
+- **Field of View (FOV) cone detection** for stealth mechanics
 - Object-oriented design patterns for game entities
+- Enemy AI patrol patterns and state machines
 - Memory management and resource cleanup in C++
 - Cross-platform build configuration with CMake
 
