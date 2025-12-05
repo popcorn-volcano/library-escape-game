@@ -87,15 +87,13 @@ make
 - **Timer**: Complete the level before time runs out
 - **Score**: Collect notes to increase your score
 
-##  What I Learned
+##  Project Highlights
 
-- Game loop architecture with delta time for frame-rate independent movement
-- 2D rendering pipeline and texture management
-- **Field of View (FOV) cone detection** for stealth mechanics
-- Object-oriented design patterns for game entities
-- Enemy AI patrol patterns and state machines
-- Memory management and resource cleanup in C++
-- Cross-platform build configuration with CMake
+- **Game Engine Architecture** - Implemented a complete game loop with delta time for frame-rate independent movement
+- **Stealth AI System** - Designed field of view (FOV) cone detection for realistic stealth mechanics
+- **Modular OOP Design** - Structured codebase with separate classes for characters, enemies, obstacles, and collectibles
+- **Resource Management** - Efficient texture loading, font rendering, and audio playback with proper cleanup
+- **Cross-Platform Build** - CMake configuration supporting Windows, macOS, and Linux
 
 ##  License
 
