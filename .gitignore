@@ -1,0 +1,13 @@
+# Build artifacts
+output/
+cmake-build-debug/
+*.exe
+*.o
+*.a
+
+# IDE
+.idea/
+.vscode/
+
+# Dependencies (already in repo, don't need to upload)
+SDL_lib/
