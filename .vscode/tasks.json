@@ -1,0 +1,102 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Game (g++)",
+            "type": "process",
+            "command": "g++",
+            "args": [
+                "-std=c++20",
+                "-Wall",
+                "-Wextra",
+                "-g3",
+                "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/src/engine.cpp",
+                "${workspaceFolder}/src/menu.cpp",
+                "${workspaceFolder}/src/playground.cpp",
+                "${workspaceFolder}/src/settings.cpp",
+                "${workspaceFolder}/src/character.cpp",
+                "${workspaceFolder}/src/tool.cpp",
+                "${workspaceFolder}/src/obstacle.cpp",
+                "${workspaceFolder}/src/table.cpp",
+                "${workspaceFolder}/src/bookshelf.cpp",
+                "${workspaceFolder}/src/collectible.cpp",
+                "${workspaceFolder}/src/collectible_manager.cpp",
+                "${workspaceFolder}/src/note.cpp",
+                "${workspaceFolder}/src/coffee.cpp",
+                "${workspaceFolder}/src/freeze.cpp",
+                "${workspaceFolder}/src/pastexam.cpp",
+                "${workspaceFolder}/src/game_management.cpp",
+                "${workspaceFolder}/src/score_page.cpp",
+                "${workspaceFolder}/src/enemy.cpp",
+                "${workspaceFolder}/src/vision.cpp",
+                "${workspaceFolder}/src/audio_manager.cpp",
+                "-I${workspaceFolder}/include",
+                "-I${workspaceFolder}/SDL_lib/SDL2-2.30.7/x86_64-w64-mingw32/include",
+                "-I${workspaceFolder}/SDL_lib/SDL2-2.30.7/x86_64-w64-mingw32/include/SDL2",
+                "-I${workspaceFolder}/SDL_lib/SDL2_image-2.8.2/x86_64-w64-mingw32/include",
+                "-I${workspaceFolder}/SDL_lib/SDL2_image-2.8.2/x86_64-w64-mingw32/include/SDL2",
+                "-I${workspaceFolder}/SDL_lib/SDL2_ttf-2.22.0/x86_64-w64-mingw32/include",
+                "-I${workspaceFolder}/SDL_lib/SDL2_ttf-2.22.0/x86_64-w64-mingw32/include/SDL2",
+                "-I${workspaceFolder}/SDL_lib/SDL2_mixer-2.8.0/x86_64-w64-mingw32/include",
+                "-I${workspaceFolder}/SDL_lib/SDL2_mixer-2.8.0/x86_64-w64-mingw32/include/SDL2",
+                "-L${workspaceFolder}/SDL_lib/SDL2-2.30.7/x86_64-w64-mingw32/lib",
+                "-L${workspaceFolder}/SDL_lib/SDL2_image-2.8.2/x86_64-w64-mingw32/lib",
+                "-L${workspaceFolder}/SDL_lib/SDL2_ttf-2.22.0/x86_64-w64-mingw32/lib",
+                "-L${workspaceFolder}/SDL_lib/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib",
+                "-o",
+                "${workspaceFolder}/output/my_Final_project_game.exe",
+                "-lmingw32",
+                "-lSDL2main",
+                "-lSDL2",
+                "-lSDL2_image",
+                "-lSDL2_ttf",
+                "-lSDL2_mixer"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Copy SDL DLLs",
+            "type": "process",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "$dst='${workspaceFolder}/output'; New-Item -ItemType Directory -Path $dst -Force | Out-Null; Copy-Item -Force '${workspaceFolder}/bin/SDL2.dll','${workspaceFolder}/bin/SDL2_image.dll','${workspaceFolder}/bin/SDL2_mixer.dll','${workspaceFolder}/bin/SDL2_ttf.dll' -Destination $dst"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "C/C++ Compile Run: Compile",
+            "dependsOn": "Build Game (g++)",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "C/C++ Compile Run: Run",
+            "type": "process",
+            "command": "${workspaceFolder}/output/my_Final_project_game.exe",
+            "dependsOn": [
+                "C/C++ Compile Run: Compile",
+                "Copy SDL DLLs"
+            ],
+            "dependsOrder": "sequence",
+            "options": {
+                "cwd": "${workspaceFolder}/output"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Game",
+            "dependsOn": "C/C++ Compile Run: Run",
+            "problemMatcher": []
+        }
+    ]
+}

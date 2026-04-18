@@ -1,0 +1,23 @@
+"C:\Program Files\JetBrains\CLion 2024.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\jacob\Desktop\finalproject\finalproject_fullversion -B C:\Users\jacob\Desktop\finalproject\finalproject_fullversion\cmake-build-debug
+-- The C compiler identification is GNU 13.1.0
+-- The CXX compiler identification is GNU 13.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.3/bin/mingw/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2024.3/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found SDL2: mingw32;-mwindows;C:/Users/jacob/Desktop/finalproject/finalproject_fullversion/SDL_lib/SDL2-2.30.7/x86_64-w64-mingw32/lib/libSDL2main.a;C:/Users/jacob/Desktop/finalproject/finalproject_fullversion/SDL_lib/SDL2-2.30.7/x86_64-w64-mingw32/lib/libSDL2.dll.a
+-- Found SDL2_image: C:/Users/jacob/Desktop/finalproject/finalproject_fullversion/SDL_lib/SDL2_image-2.8.2/x86_64-w64-mingw32/lib/libSDL2_image.dll.a (found version "2.8.2")
+-- Found SDL2_ttf: C:/Users/jacob/Desktop/finalproject/finalproject_fullversion/SDL_lib/SDL2_ttf-2.22.0/x86_64-w64-mingw32/lib/libSDL2_ttf.dll.a (found version "2.22.0")
+-- Found SDL2_mixer: C:/Users/jacob/Desktop/finalproject/finalproject_fullversion/SDL_lib/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib/libSDL2_mixer.dll.a (found version "2.8.0")
+-- Configuring done (7.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/jacob/Desktop/finalproject/finalproject_fullversion/cmake-build-debug
